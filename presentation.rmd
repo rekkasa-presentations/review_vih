@@ -1,0 +1,17 @@
+---
+title: "Evaluating bias and variance across different validation methods for disease simulation models"
+subtitle: "A simulation study"
+author: Alexandros Rekkas
+header-includes:
+  - \usepackage{amssymb}
+  - \usepackage{amsmath}
+  - \usepackage{bm}
+  - \newcommand\given[1][]{\:#1\vert\:}
+output:
+  ioslides_presentation:
+    smaller: TRUE
+    keep_md: TRUE
+    transition: slower
+    widescreen: TRUE
+  beamer_presentation: default
+---
