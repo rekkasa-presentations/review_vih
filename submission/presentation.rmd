@@ -66,3 +66,9 @@ knitr::opts_chunk$set(echo = FALSE)
 knitr::include_graphics(here::here("figures/microsimulation.png"))
 knitr::include_graphics(here::here("figures/microsimulation_table.png"))
 ```
+
+
+## Results
+```{r fig2, echo=FALSE, fig.show="hold"}
+knitr::include_graphics(here::here("figures/result_base.png"))
+```
