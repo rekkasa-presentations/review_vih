@@ -60,15 +60,52 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - Calculate optimism-corrected AUC from <span style="background-color: steelblue; color: white;border-radius: 25px; padding: 6px">AUC</span> - mean(**Optimism**)
 
+## Microsimulation
+- Used in economics, public and population health
+- Use individual-level data to construct a group of individuals to represent a target population and their behaviours
+- Simulates, using known probabilities, changes in individual’s characteristics over time
+- Tracks the changing behaviour inside a dynamic model as the environment and individual change over time
 
-## Setup {.flexbox}
+## Paper | Setup {.flexbox}
 ```{r fig1, echo=FALSE, fig.show="hold", out.width="50%"}
 knitr::include_graphics(here::here("figures/microsimulation.png"))
 knitr::include_graphics(here::here("figures/microsimulation_table.png"))
 ```
 
+## Paper | Setup
+- Data from Atherosclerosis Risk in Communities (ARIC) study
+- 15,792 participants aged 45-64 recruited from 1987-1989
+- Mean follow-up time 22.8 years
+- Data contains information on:
+  - common risk factors (age, sex, blood pressure, ...)
+  - stroke incidence
+  - death
 
-## Results
+## Paper | Setup
+- Use the data from ARIC to build a microsimulation model
+- Draw 1000 individuals from ARIC
+- Use the transition probabilities from the ARIC microsimulation model to simualate state changes
+- Develop a prediction model for stroke mortality
+- Evaluate performance correcting for optimism
+- Validate model in a simulated dataset of 100,000 individuals to get "true" performance
+- Repeat 1000 times
+
+## Paper | Results: base case
 ```{r fig2, echo=FALSE, fig.show="hold"}
 knitr::include_graphics(here::here("figures/result_base.png"))
 ```
+
+## Paper | Results: sample size {.flexbox}
+```{r fig3, echo=FALSE, fig.show="hold"}
+knitr::include_graphics(here::here("figures/sample_size.png"))
+```
+
+## Paper | Results: cross validation {.flexbox}
+```{r fig4, echo=FALSE, fig.show="hold"}
+knitr::include_graphics(here::here("figures/cross_validation_folds.png"))
+```
+
+## Paper | Conclusions
+- Apparent performance is optimistic
+- Split sample and cross validation pessimistic
+- Bootstrap is better alternative, but computationally intensive (often infeasible?)
